@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>CV - Leandro Baigorria</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+	/* ========================================
+       TEXT
+    ======================================== */
+  
+	.centered_text {
+		text-align: center;
+	}
+	
+	/* ========================================
+       ANCHOR
+    ======================================== */
+	a {
+
+		color: inherit;
+		text-decoration: none;
+		transition: 0.2s ease;
+		padding: 2px 6px;
+		border-radius: 4px;
+	}
+
+	a:visited {
+		color: inherit;
+	}
+
+	a:hover {
+		opacity: 0.5;
+		text-color: 
+		background-color: #E2E5E9;
+		border-radius: 0.8px;
+	}
+
+    /* ========================================
+       RESET
+    ======================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ========================================
+       BODY
+    ======================================== */
+
+    body {
+
+      font-family: 'Inter', sans-serif;
+
+      background: #eef2f7;
+
+      color: #1e293b;
+
+      line-height: 1.7;
+
+      padding: 40px 20px;
+
+    }
+
+    /* ========================================
+       FLOATING LANGUAGE SWITCH
+    ======================================== */
+
+    .top-controls {
+
+      position: fixed;
+
+      top: 25px;
+      right: 30px;
+
+      z-index: 1000;
+
+    }
+
+    .language-button {
+
+      border: none;
+
+      background: #095DA9;
+
+      color: white;
+
+      padding: 12px 18px;
+
+      border-radius: 10px;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      cursor: pointer;
+
+      transition: 0.2s ease;
+
+      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.25);
+
+    }
+
+    .language-button:hover {
+
+      transform: translateY(-2px);
+
+      opacity: 0.95;
+
+    }
+
+    /* ========================================
+       A4 DOCUMENT
+    ======================================== */
+
+    .cv-container {
+
+      width: 210mm;
+
+      min-height: 297mm;
+
+      background: white;
+
+      margin: 40px auto;
+
+      padding: 60px;
+
+      border-radius: 4px;
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.08),
+        0 2px 8px rgba(0,0,0,0.04);
+
+    }
+
+    /* ========================================
+       HEADER
+    ======================================== */
+
+    header {
+
+      text-align: center;
+
+      margin-bottom: 60px;
+
+    }
+
+    h1 {
+
+      font-size: 52px;
+
+      font-weight: 700;
+
+      color: #095DA9;
+
+      margin-bottom: 10px;
+
+      letter-spacing: -1px;
+
+    }
+
+    .role {
+
+      font-size: 18px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 4px;
+
+      color: #64748b;
+
+      margin-bottom: 30px;
+
+      font-weight: 500;
+
+    }
+
+    .divider {
+
+      width: 70px;
+      height: 3px;
+
+      background: #095DA9b;
+
+      margin: 0 auto 30px auto;
+
+      border-radius: 999px;
+
+    }
+
+    .contact-info {
+
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 20px;
+
+      font-size: 14px;
+
+      color: #475569;
+
+    }
+
+    /* ========================================
+       SECTIONS
+    ======================================== */
+
+    section {
+
+      margin-bottom: 50px;
+
+    }
+
+    section h2 {
+
+      font-size: 22px;
+
+      color: #095DA9;
+
+      margin-bottom: 20px;
+
+      padding-bottom: 10px;
+
+      border-bottom: 2px solid #e2e8f0;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+    }
+
+    /* ========================================
+       ITEMS
+    ======================================== */
+
+    .item {
+
+      margin-bottom: 35px;
+
+    }
+
+    .item h3 {
+
+      font-size: 18px;
+
+      color: #0f172a;
+
+      margin-bottom: 5px;
+
+    }
+
+    .meta {
+
+      display: block;
+
+      font-size: 14px;
+
+      color: #64748b;
+
+      margin-bottom: 12px;
+
+      font-weight: 500;
+
+    }
+
+    .item p {
+
+      color: #334155;
+
+    }
+
+    /* ========================================
+       SKILLS
+    ======================================== */
+
+    .skills-list {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      list-style: none;
+
+    }
+
+    .skills-list li {
+
+      background: #dbeafe;
+
+      color: #1d4ed8;
+
+      padding: 10px 16px;
+
+      border-radius: 999px;
+
+      font-size: 14px;
+
+      font-weight: 500;
+
+    }
+
+    /* ========================================
+       LANGUAGE SYSTEM
+    ======================================== */
+
+    .lang {
+
+      display: none;
+
+    }
+
+    .lang.active {
+
+      display: inline;
+
+    }
+
+    .lang-block {
+
+      display: none;
+
+    }
+
+    .lang-block.active {
+
+      display: block;
+
+    }
+
+    /* ========================================
+       RESPONSIVE
+    ======================================== */
+
+    @media (max-width: 1100px) {
+
+      body {
+
+        padding: 20px;
+
+      }
+
+      .cv-container {
+
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 40px;
+
+      }
+
+    }
+
+    @media (max-width: 768px) {
+
+      h1 {
+
+        font-size: 36px;
+
+      }
+
+      .role {
+
+        font-size: 14px;
+
+        letter-spacing: 2px;
+
+      }
+
+      .cv-container {
+
+        padding: 30px;
+
+      }
+
+      .contact-info {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+      }
+
+      .top-controls {
+
+        top: 15px;
+        right: 15px;
+
+      }
+
+    }
+
+    /* ========================================
+       PRINT MODE
+    ======================================== */
+
+    @media print {
+
+      body {
+
+        background: white;
+
+        padding: 0;
+
+      }
+
+      .top-controls {
+
+        display: none;
+
+      }
+
+      .cv-container {
+
+        width: 100%;
+
+        margin: 0;
+
+        box-shadow: none;
+
+        border-radius: 0;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ========================================
+       FLOATING LANGUAGE BUTTON
+  ======================================== -->
+
+  <div class="top-controls">
+
+    <button
+      id="toggle-language"
+      class="language-button"
+    >
+      EN | ES
+    </button>
+
+  </div>
+
+  <!-- ========================================
+       MAIN DOCUMENT
+  ======================================== -->
+
+  <div class="cv-container">
+
+    <!-- ========================================
+         HEADER
+    ======================================== -->
+
+    <header>
+
+      <h1>Leandro Baigorria</h1>
+
+      <p class="role">
+
+        <span class="lang es active">
+          Desarrollador Full Stack
+        </span>
+
+        <span class="lang en">
+          Full Stack Developer
+        </span>
+
+      </p>
+
+      <div class="divider"></div>
+
+      <div class="contact-info">
+
+        <span>📍</span><a href="https://www.google.com/maps/place/Av.+Monse%C3%B1or+Pablo+Cabrera+1986,+X5009+C%C3%B3rdoba/@-31.3866643,-64.2070505,17z/data=!3m1!4b1!4m6!3m5!1s0x943298f05a365ad5:0x3acdc068d677db71!8m2!3d-31.3866689!4d-64.2044756!16s%2Fg%2F11yh55d37g?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+		<span>Córdoba, Argentina</span>
+		</a>
+
+        <span>📧</span><a href="mailto:leobaigorria@hotmail.com"><span>leobaigorria@hotmail.com</span></a>
+
+        <span>💼</span><a href="https://www.linkedin.com/in/leandro-baigorria-79251779" target="_blank"><span>LinkedIn </span></a>
+
+        <!-- <span>💻 GitHub</span> -->
+
+      </div>
+
+    </header>
+
+    <!-- ========================================
+         PROFILE
+    ======================================== -->
+
+    <section>
+
+      <h2>
+
+        <span class="lang es active">
+          Perfil Profesional
+        </span>
+
+        <span class="lang en">
+          Professional Profile
+        </span>
+
+      </h2>
+
+      <div class="lang-block es active">
+
+        <p class="centered_text">
+          Me considero una persona proactiva, resolutiva y autodidacta, 
+		  con facilidad para adaptarme y aprender continuamente. 
+		  Disfruto del trabajo en equipo y de enfrentar nuevos desafíos.
+        </p>
+
+      </div>
+
+      <div class="lang-block en">
+
+        <p class="centered_text">
+          I consider myself a proactive, resourceful, and self-taught person, 
+		  with a strong ability to adapt and continuously learn. 
+		  I enjoy teamwork and taking on new challenges.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         EXPERIENCE
+    ======================================== -->
+
+    <section>
+
+      <h2>
+
+        <span class="lang es active">
+          Experiencia Laboral
+        </span>
+
+        <span class="lang en">
+          Work Experience
+        </span>
+
+      </h2>
+
+      <div class="item">
+
+        <h3>
+
+          <span class="lang es active">
+            Team Leader - Desarrollador Full Stack 
+          </span>
+
+          <span class="lang en">
+            Team Leader - Full Stack developer
+          </span>
+
+        </h3>
+
+        <span class="meta">
+
+          <span class="lang es active">
+            Glean.info • Noviembre 2025 - Actualidad
+          </span>
+
+          <span class="lang en">
+            Glean.info • November 2025 - Present
+          </span>
+
+        </span>
+
+        <div class="lang-block es active">
+
+          <p>
+             Team Leader
+			• Full Stack Developer
+			• Arquitecto de Datos
+			• Administrador de base de datos (Mysql)
+			• Analista Funcional
+			• Scrum Master
+			• Administrador de Google Workspace	
+          </p>
+
+        </div>
+
+        <div class="lang-block en">
+
+          <p>
+			 Team Leader
+			• Full Stack Developer
+			• Data Architect
+			• Database Administrator (Mysql)
+			• Functional Analyst
+			• Scrum Master
+			• Google Workspace Administrator
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="item">
+
+        <h3>
+
+          <span class="lang es active">
+            Desarrollador Full Stack
+          </span>
+
+          <span class="lang en">
+            Full Stack Developer
+          </span>
+
+        </h3>
+
+        <span class="meta">
+
+          <span class="lang es active">
+            Language Solutions Team • Enero 2024 - Noviembre 2025
+          </span>
+
+          <span class="lang en">
+            Language Solutions Team • January 2024 - November 2025
+          </span>
+
+        </span>
+
+        <div class="lang-block es active">
+
+          <p>
+             A cargo del sector IT
+			• Desarrollador Full Stack (desarrollo de un sistema end to end)
+			• Administrador de Base de Datos (postgresql)
+			• Administrador Microsoft 365
+          </p>
+
+        </div>
+
+        <div class="lang-block en">
+
+          <p>
+             In charge of IT sector
+			• Full Stack Developer (development of an end to end system)
+			• Database administrator (postgresql)
+			• Microsoft 365 Administrator
+          </p>
+
+        </div>
+
+      </div>
+	  
+	  <div class="item">
+
+        <h3>
+
+          <span class="lang es active">
+            Desarrollador Backend
+          </span>
+
+          <span class="lang en">
+            Backend Developer
+          </span>
+
+        </h3>
+
+        <span class="meta">
+
+          <span class="lang es active">
+            Encode • Agosto 2021 - Diciembre 2023
+          </span>
+
+          <span class="lang en">
+            Encode • August 2021 - December 2023
+          </span>
+
+        </span>
+
+        <div class="lang-block es active">
+
+          <p>
+             Desarrollador Backend
+			• Definicion de Requerimientos
+			• Administrador de Base de Datos (SQL Server)
+			• Referente de Area Backend
+          </p>
+
+        </div>
+
+        <div class="lang-block en">
+
+          <p>
+			 Backend Developer
+			• Requirements Definition
+			• Database Administrator (SQL Server)
+			• Backend Team Lead            
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         EDUCATION
+    ======================================== -->
+
+    <section>
+
+      <h2>
+
+        <span class="lang es active">
+          Educación Superior
+        </span>
+
+        <span class="lang en">
+          Higher Education
+        </span>
+
+      </h2>
+
+      <div class="item">
+
+        <h3>
+
+          <span class="lang es active">
+            Ingenieria en Sistemas 
+          </span>
+
+          <span class="lang en">
+            Systems Engineering
+          </span>
+
+        </h3>
+
+        <span class="meta">
+
+          <span class="lang es active">
+            Universidad Tecnologica Nacional • 4to año
+          </span>
+
+          <span class="lang en">
+            Universidad Tecnologica Nacional • 4th year
+          </span>
+
+        </span>
+
+      </div>
+	  
+	  <div class="item">
+
+        <h3>
+
+          <span class="lang es active">
+            Técnico Superior en Programacion
+          </span>
+
+          <span class="lang en">
+            Higher Technician in Programming
+          </span>
+
+        </h3>
+
+        <span class="meta">
+
+          <span class="lang es active">
+            Universidad Tecnologica Nacional • Finalizado - Promedio 9
+          </span>
+
+          <span class="lang en">
+            Universidad Tecnológica Nacional • Completed – GPA: 9.0
+          </span>
+
+        </span>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================
+         SKILLS
+    ======================================== -->
+
+    <section>
+
+      <h2>
+
+        <span class="lang es active">
+          Competencias
+        </span>
+
+        <span class="lang en">
+          Skills
+        </span>
+
+      </h2>
+
+      <ul class="skills-list">		
+		<li><strong>Backend:</strong> .NET / C#</li>
+		<li><strong>Frontend:</strong> Angular, HTML, CSS, JavaScript, TypeScript</li>
+		<li><strong>Databases:</strong> SQL Server, PostgreSQL, MySQL</li>
+		<li><strong>Tools:</strong> Git, Confluence, Gitlab, Trello</li>
+		<li><strong>Methodologies:</strong> Agile / Scrum</li>
+      </ul>
+
+    </section>
+
+    <!-- ========================================
+         LANGUAGES
+    ======================================== -->
+
+    <section>
+
+      <h2>
+
+        <span class="lang es active">
+          Idiomas
+        </span>
+
+        <span class="lang en">
+          Languages
+        </span>
+
+      </h2>
+
+      <div class="lang-block es active">
+
+        <p>Español — Nativo</p>
+        <p>Inglés — Intermedio</p>
+
+      </div>
+
+      <div class="lang-block en">
+
+        <p>Spanish — Native</p>
+        <p>English — Intermediate</p>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- ========================================
+       JAVASCRIPT
+  ======================================== -->
+
+  <script>
+
+    const button = document.getElementById("toggle-language");
+
+    let currentLanguage = "es";
+
+    button.addEventListener("click", () => {
+
+      const esElements = document.querySelectorAll(".es");
+      const enElements = document.querySelectorAll(".en");
+
+      if (currentLanguage === "es") {
+
+        esElements.forEach(el => {
+          el.classList.remove("active");
+        });
+
+        enElements.forEach(el => {
+          el.classList.add("active");
+        });
+
+        currentLanguage = "en";
+
+      } else {
+
+        enElements.forEach(el => {
+          el.classList.remove("active");
+        });
+
+        esElements.forEach(el => {
+          el.classList.add("active");
+        });
+
+        currentLanguage = "es";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
